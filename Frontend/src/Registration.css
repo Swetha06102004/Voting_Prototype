@@ -1,0 +1,152 @@
+
+/* Form container */
+.form-container {
+    max-width: 500px;
+    width: 90%;
+    margin: 80px auto;
+    padding: 35px 30px;
+    background:'#fdfefe '; 
+    border-radius: 16px;
+    border-color: black;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay effect behind the form */
+.form-container::before {
+    content: '';
+    inset: 0;
+    background: rgba(0, 0, 0, 0.03);    
+    border-radius: 16px; /* Match the border radius of the form */
+    z-index: -1; /* Send the overlay behind the content */
+}
+
+/* Heading */
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color:  black;
+}
+
+/* Input group */
+.input-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.input-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color:black;
+}
+.form-container .input-group label {
+    color: black;
+}
+
+/* Inputs & selects - more compact input fields */
+.input-group input,
+.input-group select {
+    height: 30px; /* Reduced height */
+    padding: 0 12px; /* Reduced padding */
+    font-size: 14px; /* Smaller font size */
+    border: 1px solid black;
+    border-radius: 8px;
+    background: #fff;
+}
+
+/* Focus effect */
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Gender options */
+.gender-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.gender-options label {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Submit button */
+.submit-btn {
+    width: 100%;
+    padding: 13px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #43a047;
+}
+
+/* Error messages */
+.error-message {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Preview image */
+img {
+    margin-top: 12px;
+    width: 90px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .form-container {
+        margin: 40px auto;
+        padding: 25px 20px;
+    }
+
+    .gender-options {
+        flex-direction: column;
+    }
+
+    /* Reduce input field size for mobile view */
+    .input-group input,
+    .input-group select {
+        height: 38px;
+        font-size: 13px;
+    }
+    .input-group.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Center children horizontally */
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.input-group.photo input[type="file"] {
+  width: auto;               /* prevent full width */
+  display: block;
+  margin: 0 auto;            /* center horizontally */
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+}
